@@ -226,3 +226,31 @@ php -S localhost:8000
 ```
 
 Una forma de cargar los datos en el Javascript
+
+```jsx
+const cargar = document.getElementById('loadBooks');
+
+        cargar.addEventListener('click', event => {
+            const mensaje = document.getElementById('messages');
+            mensaje.children[0].innerHTML = 'Cargando Libros...';
+            mensaje.style.display = 'block';
+            const URL = 'http://localhost:8000/books';
+            fetch(URL)
+            .then(response => response.json() )
+            .then(data => {
+                const body = document.querySelector('tbody');
+                let template = '';
+                for ( i in data ) {
+                    template +=
+                    `<tr>
+                        <td>${data[i].titulo}</td>
+                        <td>${data[i].id_autor}</td>
+                        <td>${data[i].id_genero}</td>
+                    </tr>`;                    
+                }
+                body.innerHTML = template;
+                mensaje.style.display = 'none';
+            })
+            .catch(error => console.log(error))
+        });
+```
