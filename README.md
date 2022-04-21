@@ -25,7 +25,6 @@ Permite mandar JSON, XML, binarios (imágenes, documentos), texto, es un estilo 
 1. Recurso → URI → Acción
 2. GET → PUT → DELETE (esto para peticiones REST)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/18666ed5-718d-44f5-9ad1-c00cfebf6e3b/Untitled.png)
 
 **Conviene utilizar REST cuando las interacciones son simples y los recursos son limitados**
 
@@ -154,7 +153,6 @@ El flujo de la petición será el siguiente:
 
 **Son 3 actores los que vienen involucrados**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83b65068-09dc-47ce-99bb-d59d0c5f45ba/Untitled.png)
 
 ```php
 header( 'Content-Type: application/json' );
